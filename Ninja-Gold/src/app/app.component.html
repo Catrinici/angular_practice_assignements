@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand" style="color: brown;">Welcome to Ninja Gold Game!</a>
+            </div>
+        </div>
+        <div class="container-fluid">
+
+            <label for="">Your Gold: </label> {{gold}}
+            <button class="btn btn-primary" style="float: right; background-color:brown" (click)="restart()">Restart Game</button>
+        </div>
+
+    </nav>
+    <div class="container" style="text-align:center; display:inline-flex">
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem; margin-left: 10px">
+            <div class="card-header">
+                <h4>Farm</h4>
+            </div>
+            <div class="card-body">
+                <p class="card-text">(earns 10-20 golds)</p>
+
+                <button (click)="findGoldFarm()">Find Gold!</button>
+
+            </div>
+        </div>
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem; margin-left: 10px">
+            <div class="card-header">
+                <h4>Cave</h4>
+            </div>
+            <div class="card-body">
+                <p class="card-text">(earns 5-10 golds)</p>
+                <button (click)="findGoldCave()">Find Gold!</button>
+            </div>
+        </div>
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;margin-left: 10px">
+            <div class="card-header">
+                <h4>House</h4>
+            </div>
+            <div class="card-body">
+                <p class="card-text">(earns 2-5 golds)</p>
+                <button (click)="findGoldHouse()">Find Gold!</button>
+            </div>
+        </div>
+
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;margin-left: 10px">
+            <div class="card-header">
+                <h4>Casino</h4>
+            </div>
+            <div class="card-body">
+                <p>(earns/takes 0-50 golds)</p>
+                <button (click)="findGoldCasino()">Find Gold!</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="footer">
+        <h4 style="margin: 20px;">Activities</h4>
+        <div class="jumbotron">
+            <div class="activities" style="margin: 20px;;">
+                <div class="text text-success" *ngFor="let a of activities">
+
+                    <p>{{a}}</p>
+                </div>
+                <div class="text text-danger" *ngFor="let a of lostactivities">
+                    <p>{{a}}</p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

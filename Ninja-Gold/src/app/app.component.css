@@ -1,0 +1,19 @@
+.card {
+    margin: 20px;
+    ;
+    padding: 50px;
+    border: 1px solid brown;
+}
+
+.footer {
+    margin: 20 px;
+}
+
+button {
+    background-color: brown;
+    color: aliceblue;
+}
+
+h4 {
+    color: brown;
+}
