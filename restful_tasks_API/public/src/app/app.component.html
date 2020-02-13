@@ -1,0 +1,35 @@
+<form (submit)="onSubmit()">
+    <label for="title">Title</label>
+    <input type="text" name="newtask.title" [(ngModel)]="newtask.title" />
+    <label for="description">Description</label>
+    <input type="text" name="newtask.description" [(ngModel)]="newtask.description" />
+    <input type="submit" value="Create Task" />
+</form>
+<br>
+
+
+<button class="btn btn-primary" (click)='getTasksFromService()'>Get all Tasks</button>
+
+<div *ngFor='let task of tasks'>
+    {{task.title}}
+    <button (click)='showTask(task)'>Description</button>
+    <button (click)='taskForm(task)'>Edit Task</button>
+    <button (click)='onDelete(task)'>Delete Task</button><br>
+</div>
+
+<br>
+<br>
+
+<app-tasks *ngIf="selectedTask" [taskToShow]="selectedTask"></app-tasks>
+
+<br>
+
+<form *ngIf="editTask" (submit)="onEdit()">
+    <label>Task Title:
+        <input type="text" name="editTask.title" [(ngModel)]="editTask.title">
+    </label>
+    <label>Task Description:
+        <input type="text" name="editTask.description" [(ngModel)]="editTask.description">
+    </label>
+    <input type="submit" value="Update Task">
+</form>
